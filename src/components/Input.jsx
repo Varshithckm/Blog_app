@@ -1,8 +1,11 @@
 import React from "react";
 import { useId } from "react";
-
+//forwardref used to provide reference of a state ful component to  its  child  components
 const Input = React.forwardRef(function Input(
-  { label, type = "text", className = "", ...props },
+  { label,
+     type = "text",
+      className = "",
+       ...props },
   ref
 ) {
   const id = useId();

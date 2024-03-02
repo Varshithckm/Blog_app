@@ -1,11 +1,17 @@
 import React from 'react'
-import {Container, Logo, LogoutBtn} from '../index'
+import {Container, Logo} from '../index'
 import { Link } from 'react-router-dom'
 import {useSelector} from 'react-redux'
 import { useNavigate } from 'react-router-dom'
+import LogoutBtn from './LogoutBtn'
+import authService from '../../appwrite/auth'
+import store from '../../store/store'
+import authSlice from '../../store/authSlice'
+
 
 function Header() {
-  const authStatus = useSelector((state) => state.auth.status)
+
+  const authStatus = useSelector((state) => state.status)
   const navigate = useNavigate()
 
   const navItems = [
